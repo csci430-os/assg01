@@ -21,6 +21,6 @@ assg_doc = ${PROJECT_NAME}.pdf
 include include/Makefile.inc
 
 # assignment header file specific dependencies
-${OBJ_DIR}/assg01-tests.o: ${INC_DIR}/HypotheticalMachineSimulator.hpp
-${OBJ_DIR}/assg01-sim.o: ${INC_DIR}/HypotheticalMachineSimulator.hpp
+${OBJ_DIR}/${PROJECT_NAME}-tests.o: ${SRC_DIR}/${PROJECT_NAME}-tests.cpp ${INC_DIR}/HypotheticalMachineSimulator.hpp
+${OBJ_DIR}/${PROJECT_NAME}-sim.o: ${SRC_DIR}/${PROJECT_NAME}-sim.cpp ${INC_DIR}/HypotheticalMachineSimulator.hpp
 ${OBJ_DIR}/HypotheticalMachineSimulator.o: ${INC_DIR}/HypotheticalMachineSimulator.hpp ${SRC_DIR}/HypotheticalMachineSimulator.cpp
