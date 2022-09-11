@@ -367,13 +367,24 @@ Finally put it all together and test a full simulation using the
 **runSimulation()** method.  The final unit tests load programs and
 call the **runSimulation()** method to see if they halt when expected
 and end up with the expected final calculations in memory and in the
-AC.  Your `runSimulation()` For this assignment you have been given
-the code for the `runSimulation()` method.  However this method calls
-your `fetch()` and `execute()` member function implementations, so the
-code is commented out.  Uncomment the implementation of `runSimulation()`
-and enable the Task 7 tests.  If your implementations of the previous
-member functions are correct, you should be able to successfully run
-full simulations now and pass the Task 7 tests.
+AC.  You have been given the code for the `runSimulation()` method.
+However this method calls your `fetch()` and `execute()` member
+function implementations, so the code is commented out.  Uncomment the
+implementation of `runSimulation()` and enable the Task 7 tests.  
+
+Likewise, there is a small bit of code in the `operator<<()` function
+near the bottom of the source file that has been commented out.
+This loop uses the `peekAddress()` member function that you
+implemented in task 3.  You need to uncomment this loop so that
+full simulations and system tests will work.  If you get compilation
+errors here, you may have failed to declare `translateAddress()` and
+`peekAddress()` as `const` member functions.  These functions do
+not change the state of a simulation, so they should be safe to be
+used if a constant reference is passed somewhere.
+
+If your implementations of the previous member functions are correct,
+you should be able to successfully run full simulations now and pass
+the Task 7 tests.
 
 Once you have completed this task and are satisfied with your solution, commit
 your changes to the `Feedback` pull request of your GitHub classroom
