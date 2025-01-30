@@ -17,4 +17,4 @@ Implement the `translateAddress()` simulation member function.  This function tr
 **Additional Requirements**
 
 - Error checking should be done again in this function.  If the requested address is below the base address or above the bounds address, an exception must be thrown.
-
+- This function does not change the state of the hypothetical machine.  Thus it is required to be a `const` member function.

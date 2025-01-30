@@ -19,4 +19,6 @@ Implement the `execute()` member method that performs the execution portion of t
 **Additional Requirements**
 
 - You are required to use the declared global constant mnemonics for the opcodes, e.g. LOAD, STORE, etc.  Do not sprinkle your code with magic numbers.
+- You are required to cast the integer digit from the `ir` into the `irOpcode` so that it is an OpcodeMnemonic, do not use a switch or if/else statement to
+  decode the instruction integer into the mnemonic.  Do use the mnemonics in a switch or if/else block to invoke the specific execute functions.
 

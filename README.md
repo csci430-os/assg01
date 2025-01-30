@@ -217,7 +217,7 @@ tasks you will need to perform that are not described here.
 
 ## Task 1: Implement the `initializeMemory()` member function
 
-Implement the **initializeMemory()** function. You can pass these unit
+Implement the `initializeMemory()` function. You can pass these unit
 tests by simply initializing the member variables with the parameters
 given to this function.  However, you also need to dynamically
 allocate an array of integers in this function that will serve as the
@@ -245,7 +245,7 @@ repository.
 
 ## Task 2: Implement the `translateAddress()` member function
 
-Implement the **translateAddress()** function and get the unit tests
+Implement the `translateAddress()` function and get the unit tests
 to work for this test case.  The `translateAddress()` function takes a
 virtual address in the simulation memory address space and translates
 it to a real address.  So for example, if the address space defined
@@ -262,6 +262,16 @@ rejected and an exception thrown.  Also for our simulation, any
 address exactly equal to the upper bound of 1000 or bigger is an
 illegal reference, and should also generate an exception.
 
+This function takes an integer virtual address as input, and it returns
+an integer result, the real address/index into the real memory
+for the simulation.  This function should be defined as a `const`
+member function.  It does not change the state of memory, registers
+or any other member variables of the hypothetical machine
+class.  Such functions that only return information or provide
+a utility for other functions, but do not change the state of the class,
+are declared `const` so that the compiler knows that you are guaranteeing
+that the object will not change state when this function is called.
+
 Once you have completed this task and are satisfied with your solution, commit
 your changes to the `Feedback` pull request of your GitHub classroom
 repository.
@@ -271,7 +281,7 @@ repository.
 There are two defines for task 3, only define `task3_1` initially when
 first working on the `peekAddress()` and `pokeAddress()` functions.
 
-Implement the **peekAddress()** and **pokeAddress()** functions and
+Implement the `peekAddress()` and `pokeAddress()` functions and
 pass the unit tests for those functions.  These functions are tested
 by using poke to write a value somewhere in memory, then we peek the
 same address and see if we get the value we wrote to read back out
@@ -282,6 +292,9 @@ need to save the indicated value into the correct location of your
 `memory[]` array.  And likewise for peek, you need to read out a value
 from your `memory[]` array and return it.
 
+The `peekAddress()` function again only returns information when it is
+called, it should not change the state of the class.  So this function
+also needs to be a `const` member function.
 
 Once your memory peeks and pokes are working, you can try out the
 tests of the `loadProgram()` function.  This function needs to use your
@@ -299,7 +312,7 @@ repository.
 
 ## Task 4: Implement the `fetch()` simulation member method
 
-Implement the **fetch()** method for the fetch phase of a
+Implement the `fetch()` method for the fetch phase of a
 fetch/execute cycle.  If you are following along in the unit test
 file, you will see there are unit tests before the `fetch()` unit
 tests to test the `loadProgram()` function.  You have already been
@@ -316,7 +329,7 @@ repository.
 
 ## Task 5: Implement the `execute()` simulation member method
 
-Implement the **execute()** method for the execute phase of a
+Implement the `execute()` method for the execute phase of a
 fetch/execute cycle.  The execute phase has a lot more it needs to do
 than the fetch.  You need to do the following tasks in the execute
 phase:
@@ -345,10 +358,10 @@ Once you have completed this task and are satisfied with your solution, commit
 your changes to the `Feedback` pull request of your GitHub classroom
 repository.
 
-## Task 6: Implement the `execute*() member methods
+## Task 6: Implement the `execute*()` member methods
 
-Implement the **executeLoad()**, **executeStore()**,
-**executeJump()**, **executeSub()** and **executeAdd()** functions.
+Implement the `executeLoad()`, `executeStore()`,
+`executeJump()`, `executeSub()` and `executeAdd()` functions.
 Each of these has individual unit tests for them, so you should
 implement each one individually.  All of these should be relatively
 simple 1 or 2 lines of code function if you reuse some of the
@@ -364,8 +377,8 @@ repository.
 ## Task 7: Enable the full Hypothetical Machine Simulation
 
 Finally put it all together and test a full simulation using the
-**runSimulation()** method.  The final unit tests load programs and
-call the **runSimulation()** method to see if they halt when expected
+`runSimulation()` method.  The final unit tests load programs and
+call the `runSimulation()` method to see if they halt when expected
 and end up with the expected final calculations in memory and in the
 AC.  You have been given the code for the `runSimulation()` method.
 However this method calls your `fetch()` and `execute()` member
@@ -475,7 +488,7 @@ properly compiling and running the tests.
 In this problem, up to 50 points will be given for having at least 1
 commit that compiles and runs the tests (and at least some attempt was
 made to work on the first task).  Thereafter 5 to 10 points are awarded for
-completing each of the remaining 6tasks.  However you should note that the
+completing each of the remaining 6 tasks.  However you should note that the
 autograder awards either all point for passing all tests, or no points
 if any test is failing for one of the tasks.  Also note that even if
 you pass all tests, when the instructor evaluates your assignment,

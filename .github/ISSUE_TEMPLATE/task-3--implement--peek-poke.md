@@ -17,3 +17,4 @@ Implement the two member methods used to write values into simulated memory and 
 **Additional Requirements**
 
 - You are required to reuse the implementation of `translateAddress()` for both of these member functions.
+- The `peekAddress()` function does not change the state of the hypothetical machine, thus it must be a `const` member function.
