@@ -201,11 +201,11 @@ I have given you files named `HypotheticalMachineSimulator.hpp` and
 `HypotheticalMachineSimulator.cpp` for this first assignment.  The `.hpp`
 file is a header file, it contains the declaration of the
 `HypotheticalMachineSimulator` class, as well as some supporting
-classes.  You will not need to make any changes to this header file
-for this assignment.  The `.cpp` file is where the implementations of
+classes. The `.cpp` file is where the implementations of
 the simulation class member functions will be created.  All of your
-work for this assignment will be done in the
-`HypotheticalMachineSimulator.cpp` file, where you will finish the code
+work for this assignment will be done in the header file, where you
+will add in the declarations for the new member methods you create and the
+`HypotheticalMachineSimulator.cpp` source file, where you will finish the code
 to implement several member functions of the simulator class.
 
 For this assignment, to get all of the functions of the simulator
