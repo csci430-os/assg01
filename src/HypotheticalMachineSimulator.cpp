@@ -174,7 +174,7 @@ void HypotheticalMachineSimulator::loadProgram(string programFile)
   {
     throw SimulatorException("Error: expecting MEM from program file");
   }
-  
+
   // Task 3.2: uncomment this call to initializeMemory() once you have completed
   // task 3
   // initializeMemory(memoryBaseAddress, memoryBoundsAddress);
@@ -187,8 +187,8 @@ void HypotheticalMachineSimulator::loadProgram(string programFile)
   while (programStream >> addr >> value)
   {
     // Task 3.2: uncomment this call to pokeAddress() once you have completed task 3
-    //pokeAddress(addr, value);
-    
+    // pokeAddress(addr, value);
+
     // keep track of memory addresses for display purposes
     memoryAddressList.push_back(addr);
   }
@@ -548,11 +548,11 @@ ostream& operator<<(ostream& out, const HypotheticalMachineSimulator& sim)
   /*
   for (auto addr : sim.memoryAddressList)
   {
-    cout << setw(3) << left << addr << ": " << sim.peekAddress(addr) << endl;
+    out << setw(3) << left << addr << ": " << sim.peekAddress(addr) << endl;
   }
   */
-  
-  cout << endl;
+
+  out << endl;
 
   return out;
 }
